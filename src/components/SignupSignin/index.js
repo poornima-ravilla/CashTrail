@@ -29,8 +29,8 @@ function SignupSignin() {
     console.log("confirmPassword", confirmPassword);
 
     //Authenticate the user, or basically create a new account using email and password
-    if (name != "" && email != "" && password != "" && confirmPassword != "") {
-      if (password == confirmPassword) {
+    if (name !== "" && email !== "" && password !== "" && confirmPassword !== "") {
+      if (password === confirmPassword) {
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed up
@@ -68,7 +68,7 @@ function SignupSignin() {
     console.log("password", password);
     setLoading(true);
 
-    if (email != "" && password != "") {
+    if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
