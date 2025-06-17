@@ -29,8 +29,13 @@ function SignupSignin() {
     console.log("confirmPassword", confirmPassword);
 
     //Authenticate the user, or basically create a new account using email and password
-    if (name != "" && email != "" && password != "" && confirmPassword != "") {
-      if (password == confirmPassword) {
+    if (
+      name !== "" &&
+      email !== "" &&
+      password !== "" &&
+      confirmPassword !== ""
+    ) {
+      if (password === confirmPassword) {
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed up
@@ -47,7 +52,7 @@ function SignupSignin() {
             navigate("/dashboard");
           })
           .catch((error) => {
-            const errorCode = error.code;
+            // const errorCode = error.code;
             const errorMessage = error.message;
             toast.error(errorMessage);
             setLoading(false);
@@ -68,18 +73,18 @@ function SignupSignin() {
     console.log("password", password);
     setLoading(true);
 
-    if (email != "" && password != "") {
+    if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          // const user = userCredential.user;
           toast.success("User Logged In Successfully!");
           setLoading(false);
           navigate("/dashboard");
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
+          // const errorCode = error.code;
           const errorMessage = error.message;
           setLoading(false);
           toast.error(errorMessage);
@@ -130,8 +135,8 @@ function SignupSignin() {
       signInWithPopup(auth, provider)
         .then((result) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
+          // const credential = GoogleAuthProvider.credentialFromResult(result);
+          // const token = credential.accessToken;
           // The signed-in user info.
           const user = result.user;
           console.log("user>>>", user);
@@ -145,7 +150,7 @@ function SignupSignin() {
         .catch((error) => {
           setLoading(false);
           // Handle Errors here.
-          const errorCode = error.code;
+          // const errorCode = error.code;
           const errorMessage = error.message;
           toast.error(errorMessage);
         });

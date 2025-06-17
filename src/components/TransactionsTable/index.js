@@ -119,7 +119,7 @@ function TransactionsTable({
         }}
       >
         <div className="input-flex">
-          <img src={searchImg} width="16" />
+          <img src={searchImg} alt="" width="16" />
           <input
             placeholder="Search by Name"
             onChange={(e) => setSearch(e.target.value)}

@@ -8,7 +8,6 @@ import { signOut } from "firebase/auth";
 import userImg from "../../assests/user.svg";
 
 const Header = () => {
-  //react hooks
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -16,19 +15,16 @@ const Header = () => {
     if (user) {
       navigate("/dashboard");
     }
-  }, [user, loading]);
-  //hook ends
+  }, [user, loading, navigate]); // ✅ navigate added
 
   function logoutFunc() {
     try {
       signOut(auth)
         .then(() => {
-          //Signed out successful.
           toast.success("Logged Out Successfully!");
           navigate("/");
         })
         .catch((error) => {
-          // An error happened.
           toast.error(error.message);
         });
     } catch (e) {
@@ -43,6 +39,7 @@ const Header = () => {
         <div style={{ display: "flex", alignItems: "center", gap: "0.7rem" }}>
           <img
             src={user.photoURL ? user.photoURL : userImg}
+            alt="User Avatar"
             style={{ borderRadius: "50%", width: "1.5rem", height: "1.5rem" }}
           />
           <p className="logo-link" onClick={logoutFunc}>
