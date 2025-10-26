@@ -16,7 +16,7 @@ const Cards = ({
         <Card bordered={true} className="my-card">
           <h2>Current Balance</h2>
           <p>₹{totalBalance}</p>
-          <Button text="Reset Balance" blue={true} />
+          <Button text="Balance" blue={true} />
         </Card>
 
         <Card bordered={true} className="my-card">

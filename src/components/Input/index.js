@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.css";
-// import "../../index.css";
 
 const Input = ({ label, state, setState, placeholder, type }) => {
   return (

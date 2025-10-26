@@ -15,7 +15,7 @@ const Header = () => {
     if (user) {
       navigate("/dashboard");
     }
-  }, [user, loading, navigate]); // ✅ navigate added
+  }, [user, loading, navigate]); // navigate added
 
   function logoutFunc() {
     try {

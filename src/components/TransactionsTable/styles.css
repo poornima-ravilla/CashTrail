@@ -1,20 +1,12 @@
-.input-flex{
-   display:flex;
-   justify-content: flex-start;
-   align-items:center;
-   gap: 0.5rem;
-   width:100%;
-   box-shadow: var(--shadow);
-   border-radius: 0.5rem;
-   padding: 0rem 0.5rem; 
+#delete-btn {
+  width: 80px;
+  color: red;
+  border: 1px solid red;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
-.input-flex input{
-    width:100%;
-    padding: 0.5rem;
-    border:0;
-}
-
-.input-flex input:focus{
-    outline:none;
+#delete-btn:hover {
+  background: rgb(253, 134, 134); 
 }
