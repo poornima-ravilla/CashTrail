@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Radio, Select, Table, Modal, Input, message } from "antd";
+import { Radio, Select, Table, Modal, Input } from "antd";
 import searchImg from "../../assests/search.svg";
 import "./styles.css";
 import { parse, unparse } from "papaparse";
