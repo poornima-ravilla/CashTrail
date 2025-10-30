@@ -14,12 +14,6 @@ const Cards = ({
     <div>
       <Row className="my-row">
         <Card bordered={true} className="my-card">
-          <h2>Current Balance</h2>
-          <p>₹{totalBalance}</p>
-          <Button text="Balance" blue={true} />
-        </Card>
-
-        <Card bordered={true} className="my-card">
           <h2>Total Income</h2>
           <p>₹{income}</p>
           <Button text="Add Income" blue={true} onClick={showIncomeModal} />
